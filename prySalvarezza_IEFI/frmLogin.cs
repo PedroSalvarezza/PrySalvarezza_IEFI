@@ -24,7 +24,6 @@ namespace prySalvarezza_IEFI
         {
             txtContraseña.UseSystemPasswordChar = true;
             conexión.Llenar(cmbCargo);
-            
         }
         private void btnIniciar_Click(object sender, EventArgs e)
         {
@@ -41,7 +40,6 @@ namespace prySalvarezza_IEFI
 
             if (conexión.ValidarCredenciales(usuario, contraseña, cargoSeleccionado))
             {
-                // Guardar hora de ingreso y registro
                 DateTime horaIngreso = DateTime.Now;
                 int idRegistro = 0;
 
@@ -58,7 +56,6 @@ namespace prySalvarezza_IEFI
                     comando.CommandText = "SELECT @@IDENTITY";
                     idRegistro = Convert.ToInt32(comando.ExecuteScalar());
                 }
-                // Pasar datos al formulario principal
                 if (cargoSeleccionado == "Administrador")
                 {
                     frmPrincipalAdmin admin = new frmPrincipalAdmin(usuario, horaIngreso, idRegistro);
@@ -87,11 +84,6 @@ namespace prySalvarezza_IEFI
             {
                 txtContraseña.UseSystemPasswordChar = false;
             }
-        }
-
-        private void cmbCargo_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
         }
     }
 }

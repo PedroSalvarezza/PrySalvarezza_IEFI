@@ -23,7 +23,7 @@ namespace prySalvarezza_IEFI
             this.usuario = usuario;
             this.horaIngreso = horaIngreso;
             this.idRegistro = idRegistro;
-            //lblBienvenida.Text = "Bienvenido " + usuario; // suponiendo que tenés un label
+            MessageBox.Show("Bienvenido " + usuario);
         }
         clsConexión Conexión = new clsConexión();
 
@@ -32,16 +32,10 @@ namespace prySalvarezza_IEFI
             lblUsuarioIngreso.Text = usuario;
             horaIngreso = DateTime.Now;
             temporizador = new Timer();
-            temporizador.Interval = 1000; // 1 segundo
+            temporizador.Interval = 1000;
             temporizador.Tick += Temporizador_Tick;
             temporizador.Start(); ;
         }
-
-        private void frmPrincipalEmpleado_FormClosing(object sender, FormClosingEventArgs e)
-        {
-
-        }
-
         private void frmPrincipalEmpleado_FormClosed(object sender, FormClosedEventArgs e)
         {
             DateTime horaEgreso = DateTime.Now;
@@ -51,18 +45,14 @@ namespace prySalvarezza_IEFI
             using (OleDbConnection conexion = new OleDbConnection(
                 @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + Application.StartupPath + @"\ControlDeUsuarios.accdb"))
             {
-                // Usamos ? y pasamos los parámetros en orden
                 string consulta = "UPDATE Registros SET HoraEgreso = ?, TiempoTranscurrido = ? WHERE idRegistro = ?";
 
                 using (OleDbCommand comando = new OleDbCommand(consulta, conexion))
                 {
-                    // HoraEgreso: tipo Date
                     comando.Parameters.Add(new OleDbParameter { OleDbType = OleDbType.Date, Value = horaEgreso });
 
-                    // TiempoTranscurrido: tipo VarChar porque es texto (ej: 01:25:33)
                     comando.Parameters.Add(new OleDbParameter { OleDbType = OleDbType.VarChar, Value = tiempoFormateado });
 
-                    // idRegistro: tipo Integer
                     comando.Parameters.Add(new OleDbParameter { OleDbType = OleDbType.Integer, Value = idRegistro });
 
                     conexion.Open();
@@ -77,34 +67,25 @@ namespace prySalvarezza_IEFI
                 MessageBoxIcon.Information);
             Application.Exit();
         }
-
         private void auditoriasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmAuditoriasEmpleado FrmAuditoriasEmpleado = new frmAuditoriasEmpleado(usuario);
             FrmAuditoriasEmpleado.ShowDialog();
         }
-
-        private void statusStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-           
-        }
-
-        private void Temporizador_Tick(object sender, EventArgs e)
-        {
-            TimeSpan transcurrido = DateTime.Now - horaIngreso;
-            lblFechaYHora.Text = $"Tiempo transcurrido: {transcurrido.Hours:D2}:{transcurrido.Minutes:D2}:{transcurrido.Seconds:D2}";
-        }
-
         private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmUsuarioEmpleado v = new frmUsuarioEmpleado(usuario);
             v.ShowDialog();
         }
-
         private void tareasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmTareasEmpleados v = new frmTareasEmpleados(usuario);
             v.ShowDialog();
+        }
+        private void Temporizador_Tick(object sender, EventArgs e)
+        {
+            TimeSpan transcurrido = DateTime.Now - horaIngreso;
+            lblFechaYHora.Text = $"Tiempo transcurrido: {transcurrido.Hours:D2}:{transcurrido.Minutes:D2}:{transcurrido.Seconds:D2}";
         }
     }
 }

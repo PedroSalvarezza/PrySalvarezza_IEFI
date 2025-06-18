@@ -21,18 +21,15 @@ namespace prySalvarezza_IEFI
         }
 
         clsConexión conexion = new clsConexión();
-        private void btnVolver_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void frmUsuarioEmpleado_Load(object sender, EventArgs e)
         {
             txtNueva.UseSystemPasswordChar = true;
             txtRepetida.UseSystemPasswordChar = true;
-
         }
-
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
         private void btnCambiar_Click(object sender, EventArgs e)
         {
             string actual = txtActual.Text.Trim();
@@ -53,7 +50,6 @@ namespace prySalvarezza_IEFI
 
             try
             {
-                // Verificar contraseña actual
                 string consulta = "SELECT COUNT(*) FROM Usuarios WHERE Usuario = @usuario AND Contraseña = @contraseñaActual";
                 using (OleDbCommand comando = new OleDbCommand(consulta, conexion.conexión))
                 {
@@ -70,8 +66,6 @@ namespace prySalvarezza_IEFI
                         return;
                     }
                 }
-
-                // Actualizar contraseña
                 string actualizar = "UPDATE Usuarios SET Contraseña = @nueva WHERE Usuario = @usuario";
                 using (OleDbCommand comando = new OleDbCommand(actualizar, conexion.conexión))
                 {
@@ -106,11 +100,6 @@ namespace prySalvarezza_IEFI
                 if (conexion.conexión.State == ConnectionState.Open)
                     conexion.conexión.Close();
             }
-        }
-
-        private void txtNueva_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void chkMostrar_CheckedChanged(object sender, EventArgs e)

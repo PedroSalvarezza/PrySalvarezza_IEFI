@@ -37,40 +37,6 @@ namespace prySalvarezza_IEFI
             dtpFecha.MaxDate = DateTime.Today;
 
         }
-        private void CargarTareas()
-        {
-            cmbTareas.Items.Clear();
-            string consulta = "SELECT IdTarea, Tarea FROM Tareas";
-            OleDbCommand comando = new OleDbCommand(consulta, conexión.conexión);
-            conexión.conexión.Open();
-            OleDbDataReader lector = comando.ExecuteReader();
-            while (lector.Read())
-            {
-                cmbTareas.Items.Add(new KeyValuePair<int, string>((int)lector["IdTarea"], lector["Tarea"].ToString()));
-            }
-            lector.Close();
-            conexión.conexión.Close();
-            cmbTareas.DisplayMember = "Value";
-            cmbTareas.ValueMember = "Key";
-        }
-
-        private void CargarLugares()
-        {
-            cmbLugares.Items.Clear();
-            string consulta = "SELECT IdLugar, Lugar FROM Lugares";
-            OleDbCommand comando = new OleDbCommand(consulta, conexión.conexión);
-            conexión.conexión.Open();
-            OleDbDataReader lector = comando.ExecuteReader();
-            while (lector.Read())
-            {
-                cmbLugares.Items.Add(new KeyValuePair<int, string>((int)lector["IdLugar"], lector["Lugar"].ToString()));
-            }
-            lector.Close();
-            conexión.conexión.Close();
-            cmbLugares.DisplayMember = "Value";
-            cmbLugares.ValueMember = "Key";
-        }
-
         private void btnAgregrar_Click(object sender, EventArgs e)
         {
             if (cmbTareas.SelectedItem == null || cmbLugares.SelectedItem == null)
@@ -135,6 +101,49 @@ namespace prySalvarezza_IEFI
                     conexión.conexión.Close();
             }
         }
+        private void btnDeshacer_Click(object sender, EventArgs e)
+        {
+            dgvTareas.Rows.Clear();
+            txtComentarios.Clear();
+            chkInsumo.Checked = chkEstudio.Checked = chkVacaciones.Checked = chkSalario.Checked = chkRecibo.Checked = false;
+            cmbLugares.SelectedIndex = -1;
+            cmbTareas.SelectedIndex = -1;
+            dtpFecha.Value = DateTime.Now;
+
+        }
+        private void CargarTareas()
+        {
+            cmbTareas.Items.Clear();
+            string consulta = "SELECT IdTarea, Tarea FROM Tareas";
+            OleDbCommand comando = new OleDbCommand(consulta, conexión.conexión);
+            conexión.conexión.Open();
+            OleDbDataReader lector = comando.ExecuteReader();
+            while (lector.Read())
+            {
+                cmbTareas.Items.Add(new KeyValuePair<int, string>((int)lector["IdTarea"], lector["Tarea"].ToString()));
+            }
+            lector.Close();
+            conexión.conexión.Close();
+            cmbTareas.DisplayMember = "Value";
+            cmbTareas.ValueMember = "Key";
+        }
+
+        private void CargarLugares()
+        {
+            cmbLugares.Items.Clear();
+            string consulta = "SELECT IdLugar, Lugar FROM Lugares";
+            OleDbCommand comando = new OleDbCommand(consulta, conexión.conexión);
+            conexión.conexión.Open();
+            OleDbDataReader lector = comando.ExecuteReader();
+            while (lector.Read())
+            {
+                cmbLugares.Items.Add(new KeyValuePair<int, string>((int)lector["IdLugar"], lector["Lugar"].ToString()));
+            }
+            lector.Close();
+            conexión.conexión.Close();
+            cmbLugares.DisplayMember = "Value";
+            cmbLugares.ValueMember = "Key";
+        }
         private void CargarRegistroTareas()
         {
             try
@@ -160,11 +169,9 @@ namespace prySalvarezza_IEFI
 
                 dgvMostrar.DataSource = tabla;
 
-                // Ajustes visuales
                 dgvMostrar.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                 dgvMostrar.RowHeadersVisible = false;
 
-                // Colorear booleanos
                 foreach (DataGridViewRow fila in dgvMostrar.Rows)
                 {
                     foreach (string campo in new[] { "Insumos", "Estudio", "Vacaciones", "Salario", "Recibo" })
@@ -181,28 +188,6 @@ namespace prySalvarezza_IEFI
             {
                 MessageBox.Show("Error al cargar los registros: " + ex.Message);
             }
-        }
-
-        private void PintarCelda(DataGridViewRow fila, string nombreColumna)
-        {
-            if (fila.Cells[nombreColumna].Value != DBNull.Value)
-            {
-                bool valor = Convert.ToBoolean(fila.Cells[nombreColumna].Value);
-                fila.Cells[nombreColumna].Style.BackColor = valor ? Color.LightGreen : Color.LightCoral;
-                fila.Cells[nombreColumna].Style.ForeColor = Color.Black;
-                fila.Cells[nombreColumna].Value = valor ? "Sí" : "No";
-            }
-        }
-
-        private void btnDeshacer_Click(object sender, EventArgs e)
-        {
-            dgvTareas.Rows.Clear();
-            txtComentarios.Clear();
-            chkInsumo.Checked = chkEstudio.Checked = chkVacaciones.Checked = chkSalario.Checked = chkRecibo.Checked = false;
-            cmbLugares.SelectedIndex = -1;
-            cmbTareas.SelectedIndex = -1;
-            dtpFecha.Value = DateTime.Now; 
-
         }
     }
 }

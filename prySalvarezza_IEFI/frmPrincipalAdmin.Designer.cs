@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipalAdmin));
             this.menPrinncipal = new System.Windows.Forms.MenuStrip();
             this.tareasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.administraciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -45,19 +46,21 @@
             // 
             // menPrinncipal
             // 
+            this.menPrinncipal.BackColor = System.Drawing.Color.Transparent;
+            this.menPrinncipal.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menPrinncipal.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tareasToolStripMenuItem,
             this.administraciónToolStripMenuItem});
             this.menPrinncipal.Location = new System.Drawing.Point(0, 0);
             this.menPrinncipal.Name = "menPrinncipal";
-            this.menPrinncipal.Size = new System.Drawing.Size(842, 24);
+            this.menPrinncipal.Size = new System.Drawing.Size(1142, 28);
             this.menPrinncipal.TabIndex = 0;
             this.menPrinncipal.Text = "menuStrip1";
             // 
             // tareasToolStripMenuItem
             // 
             this.tareasToolStripMenuItem.Name = "tareasToolStripMenuItem";
-            this.tareasToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
+            this.tareasToolStripMenuItem.Size = new System.Drawing.Size(64, 24);
             this.tareasToolStripMenuItem.Text = "Tareas";
             this.tareasToolStripMenuItem.Click += new System.EventHandler(this.tareasToolStripMenuItem_Click);
             // 
@@ -67,50 +70,53 @@
             this.usuariosToolStripMenuItem,
             this.auditoriasToolStripMenuItem});
             this.administraciónToolStripMenuItem.Name = "administraciónToolStripMenuItem";
-            this.administraciónToolStripMenuItem.Size = new System.Drawing.Size(100, 20);
+            this.administraciónToolStripMenuItem.Size = new System.Drawing.Size(123, 24);
             this.administraciónToolStripMenuItem.Text = "Administración";
             // 
             // usuariosToolStripMenuItem
             // 
             this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(169, 26);
             this.usuariosToolStripMenuItem.Text = "Usuarios...";
             this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
             // 
             // auditoriasToolStripMenuItem
             // 
             this.auditoriasToolStripMenuItem.Name = "auditoriasToolStripMenuItem";
-            this.auditoriasToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.auditoriasToolStripMenuItem.Size = new System.Drawing.Size(169, 26);
             this.auditoriasToolStripMenuItem.Text = "Auditorias...";
             this.auditoriasToolStripMenuItem.Click += new System.EventHandler(this.auditoriasToolStripMenuItem_Click);
             // 
             // statusStrip1
             // 
+            this.statusStrip1.BackColor = System.Drawing.Color.Transparent;
+            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1,
             this.lblUsuarioIngreso,
             this.lblFechaYHora});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 446);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 533);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(842, 22);
+            this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 19, 0);
+            this.statusStrip1.Size = new System.Drawing.Size(1142, 26);
             this.statusStrip1.TabIndex = 3;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // toolStripStatusLabel1
             // 
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(50, 17);
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(62, 20);
             this.toolStripStatusLabel1.Text = "Usuario:";
             // 
             // lblUsuarioIngreso
             // 
             this.lblUsuarioIngreso.Name = "lblUsuarioIngreso";
-            this.lblUsuarioIngreso.Size = new System.Drawing.Size(0, 17);
+            this.lblUsuarioIngreso.Size = new System.Drawing.Size(0, 20);
             // 
             // lblFechaYHora
             // 
             this.lblFechaYHora.Name = "lblFechaYHora";
-            this.lblFechaYHora.Size = new System.Drawing.Size(0, 17);
+            this.lblFechaYHora.Size = new System.Drawing.Size(0, 20);
             // 
             // Temporizador
             // 
@@ -118,17 +124,19 @@
             // 
             // frmPrincipalAdmin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(842, 468);
+            this.BackgroundImage = global::prySalvarezza_IEFI.Properties.Resources._1;
+            this.ClientSize = new System.Drawing.Size(1142, 559);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menPrinncipal);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menPrinncipal;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmPrincipalAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Principal";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmPrincipalAdmin_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmPrincipalAdmin_FormClosed);
             this.Load += new System.EventHandler(this.frmPricipalAdmin_Load);
             this.menPrinncipal.ResumeLayout(false);

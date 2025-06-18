@@ -28,77 +28,52 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtTareas = new System.Windows.Forms.TextBox();
-            this.txtLugares = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btnAgregrar = new System.Windows.Forms.Button();
-            this.dgvTareas = new System.Windows.Forms.DataGridView();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTareasAdmin));
+            this.mrcLugares = new System.Windows.Forms.GroupBox();
+            this.btnEliminarLugar = new System.Windows.Forms.Button();
             this.dgvLugares = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTareas)).BeginInit();
+            this.btnAgregarLugar = new System.Windows.Forms.Button();
+            this.txtLugares = new System.Windows.Forms.TextBox();
+            this.mrcTareas = new System.Windows.Forms.GroupBox();
+            this.btnEliminarTarea = new System.Windows.Forms.Button();
+            this.dgvTareas = new System.Windows.Forms.DataGridView();
+            this.txtTareas = new System.Windows.Forms.TextBox();
+            this.btnAgregarTarea = new System.Windows.Forms.Button();
+            this.mrcLugares.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLugares)).BeginInit();
+            this.mrcTareas.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTareas)).BeginInit();
             this.SuspendLayout();
             // 
-            // txtTareas
+            // mrcLugares
             // 
-            this.txtTareas.Location = new System.Drawing.Point(13, 34);
-            this.txtTareas.Name = "txtTareas";
-            this.txtTareas.Size = new System.Drawing.Size(192, 20);
-            this.txtTareas.TabIndex = 0;
-            this.txtTareas.TextChanged += new System.EventHandler(this.txtTareas_TextChanged);
+            this.mrcLugares.BackColor = System.Drawing.Color.Transparent;
+            this.mrcLugares.Controls.Add(this.btnEliminarLugar);
+            this.mrcLugares.Controls.Add(this.dgvLugares);
+            this.mrcLugares.Controls.Add(this.btnAgregarLugar);
+            this.mrcLugares.Controls.Add(this.txtLugares);
+            this.mrcLugares.Cursor = System.Windows.Forms.Cursors.Default;
+            this.mrcLugares.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.mrcLugares.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.mrcLugares.Location = new System.Drawing.Point(313, 13);
+            this.mrcLugares.Margin = new System.Windows.Forms.Padding(4);
+            this.mrcLugares.Name = "mrcLugares";
+            this.mrcLugares.Padding = new System.Windows.Forms.Padding(4);
+            this.mrcLugares.Size = new System.Drawing.Size(287, 436);
+            this.mrcLugares.TabIndex = 9;
+            this.mrcLugares.TabStop = false;
+            this.mrcLugares.Text = "Agregar Lugar:";
             // 
-            // txtLugares
+            // btnEliminarLugar
             // 
-            this.txtLugares.Location = new System.Drawing.Point(214, 34);
-            this.txtLugares.Name = "txtLugares";
-            this.txtLugares.Size = new System.Drawing.Size(192, 20);
-            this.txtLugares.TabIndex = 1;
-            this.txtLugares.TextChanged += new System.EventHandler(this.txtLugares_TextChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(10, 12);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Agregar Tarea:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(211, 12);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(80, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Agregrar Lugar:";
-            // 
-            // btnAgregrar
-            // 
-            this.btnAgregrar.Location = new System.Drawing.Point(173, 337);
-            this.btnAgregrar.Name = "btnAgregrar";
-            this.btnAgregrar.Size = new System.Drawing.Size(75, 23);
-            this.btnAgregrar.TabIndex = 4;
-            this.btnAgregrar.Text = "Agregar";
-            this.btnAgregrar.UseVisualStyleBackColor = true;
-            this.btnAgregrar.Click += new System.EventHandler(this.btnAgregrar_Click);
-            // 
-            // dgvTareas
-            // 
-            this.dgvTareas.AllowUserToAddRows = false;
-            this.dgvTareas.AllowUserToDeleteRows = false;
-            this.dgvTareas.AllowUserToResizeColumns = false;
-            this.dgvTareas.AllowUserToResizeRows = false;
-            this.dgvTareas.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgvTareas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTareas.Location = new System.Drawing.Point(13, 60);
-            this.dgvTareas.MultiSelect = false;
-            this.dgvTareas.Name = "dgvTareas";
-            this.dgvTareas.ReadOnly = true;
-            this.dgvTareas.RowHeadersVisible = false;
-            this.dgvTareas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTareas.Size = new System.Drawing.Size(192, 271);
-            this.dgvTareas.TabIndex = 5;
+            this.btnEliminarLugar.Location = new System.Drawing.Point(173, 66);
+            this.btnEliminarLugar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEliminarLugar.Name = "btnEliminarLugar";
+            this.btnEliminarLugar.Size = new System.Drawing.Size(100, 28);
+            this.btnEliminarLugar.TabIndex = 3;
+            this.btnEliminarLugar.Text = "Eliminar";
+            this.btnEliminarLugar.UseVisualStyleBackColor = true;
+            this.btnEliminarLugar.Click += new System.EventHandler(this.btnEliminarLugar_Click);
             // 
             // dgvLugares
             // 
@@ -108,46 +83,143 @@
             this.dgvLugares.AllowUserToResizeRows = false;
             this.dgvLugares.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvLugares.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvLugares.Location = new System.Drawing.Point(214, 60);
+            this.dgvLugares.Location = new System.Drawing.Point(8, 63);
+            this.dgvLugares.Margin = new System.Windows.Forms.Padding(4);
             this.dgvLugares.MultiSelect = false;
             this.dgvLugares.Name = "dgvLugares";
             this.dgvLugares.ReadOnly = true;
             this.dgvLugares.RowHeadersVisible = false;
+            this.dgvLugares.RowHeadersWidth = 51;
             this.dgvLugares.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvLugares.Size = new System.Drawing.Size(192, 271);
+            this.dgvLugares.Size = new System.Drawing.Size(157, 334);
             this.dgvLugares.TabIndex = 6;
+            this.dgvLugares.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLugares_CellClick);
+            // 
+            // btnAgregarLugar
+            // 
+            this.btnAgregarLugar.Location = new System.Drawing.Point(173, 31);
+            this.btnAgregarLugar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAgregarLugar.Name = "btnAgregarLugar";
+            this.btnAgregarLugar.Size = new System.Drawing.Size(100, 28);
+            this.btnAgregarLugar.TabIndex = 2;
+            this.btnAgregarLugar.Text = "Agregar";
+            this.btnAgregarLugar.UseVisualStyleBackColor = true;
+            this.btnAgregarLugar.Click += new System.EventHandler(this.btnAgregarLugar_Click);
+            // 
+            // txtLugares
+            // 
+            this.txtLugares.Location = new System.Drawing.Point(8, 31);
+            this.txtLugares.Margin = new System.Windows.Forms.Padding(4);
+            this.txtLugares.Name = "txtLugares";
+            this.txtLugares.Size = new System.Drawing.Size(157, 22);
+            this.txtLugares.TabIndex = 1;
+            this.txtLugares.TextChanged += new System.EventHandler(this.txtLugares_TextChanged_1);
+            // 
+            // mrcTareas
+            // 
+            this.mrcTareas.BackColor = System.Drawing.Color.Transparent;
+            this.mrcTareas.Controls.Add(this.btnEliminarTarea);
+            this.mrcTareas.Controls.Add(this.dgvTareas);
+            this.mrcTareas.Controls.Add(this.txtTareas);
+            this.mrcTareas.Controls.Add(this.btnAgregarTarea);
+            this.mrcTareas.Cursor = System.Windows.Forms.Cursors.Default;
+            this.mrcTareas.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.mrcTareas.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.mrcTareas.Location = new System.Drawing.Point(13, 13);
+            this.mrcTareas.Margin = new System.Windows.Forms.Padding(4);
+            this.mrcTareas.Name = "mrcTareas";
+            this.mrcTareas.Padding = new System.Windows.Forms.Padding(4);
+            this.mrcTareas.Size = new System.Drawing.Size(292, 436);
+            this.mrcTareas.TabIndex = 10;
+            this.mrcTareas.TabStop = false;
+            this.mrcTareas.Text = "Agregar Tarea:";
+            // 
+            // btnEliminarTarea
+            // 
+            this.btnEliminarTarea.Location = new System.Drawing.Point(181, 60);
+            this.btnEliminarTarea.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEliminarTarea.Name = "btnEliminarTarea";
+            this.btnEliminarTarea.Size = new System.Drawing.Size(100, 28);
+            this.btnEliminarTarea.TabIndex = 3;
+            this.btnEliminarTarea.Text = "Eliminar";
+            this.btnEliminarTarea.UseVisualStyleBackColor = true;
+            this.btnEliminarTarea.Click += new System.EventHandler(this.btnEliminarTarea_Click);
+            // 
+            // dgvTareas
+            // 
+            this.dgvTareas.AllowUserToAddRows = false;
+            this.dgvTareas.AllowUserToDeleteRows = false;
+            this.dgvTareas.AllowUserToResizeColumns = false;
+            this.dgvTareas.AllowUserToResizeRows = false;
+            this.dgvTareas.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvTareas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTareas.Location = new System.Drawing.Point(8, 59);
+            this.dgvTareas.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvTareas.MultiSelect = false;
+            this.dgvTareas.Name = "dgvTareas";
+            this.dgvTareas.ReadOnly = true;
+            this.dgvTareas.RowHeadersVisible = false;
+            this.dgvTareas.RowHeadersWidth = 51;
+            this.dgvTareas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvTareas.Size = new System.Drawing.Size(164, 334);
+            this.dgvTareas.TabIndex = 5;
+            this.dgvTareas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTareas_CellClick);
+            // 
+            // txtTareas
+            // 
+            this.txtTareas.Location = new System.Drawing.Point(8, 27);
+            this.txtTareas.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTareas.Name = "txtTareas";
+            this.txtTareas.Size = new System.Drawing.Size(164, 22);
+            this.txtTareas.TabIndex = 1;
+            this.txtTareas.TextChanged += new System.EventHandler(this.txtTareas_TextChanged_1);
+            // 
+            // btnAgregarTarea
+            // 
+            this.btnAgregarTarea.Location = new System.Drawing.Point(180, 23);
+            this.btnAgregarTarea.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAgregarTarea.Name = "btnAgregarTarea";
+            this.btnAgregarTarea.Size = new System.Drawing.Size(100, 28);
+            this.btnAgregarTarea.TabIndex = 2;
+            this.btnAgregarTarea.Text = "Agregar";
+            this.btnAgregarTarea.UseVisualStyleBackColor = true;
+            this.btnAgregarTarea.Click += new System.EventHandler(this.btnAgregarTarea_Click);
             // 
             // frmTareasAdmin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(418, 378);
-            this.Controls.Add(this.dgvLugares);
-            this.Controls.Add(this.dgvTareas);
-            this.Controls.Add(this.btnAgregrar);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtLugares);
-            this.Controls.Add(this.txtTareas);
+            this.BackgroundImage = global::prySalvarezza_IEFI.Properties.Resources._4;
+            this.ClientSize = new System.Drawing.Size(619, 459);
+            this.Controls.Add(this.mrcLugares);
+            this.Controls.Add(this.mrcTareas);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmTareasAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmTareasAdmin";
+            this.Text = "Agregar tareas y lugares";
             this.Load += new System.EventHandler(this.frmTareasAdmin_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTareas)).EndInit();
+            this.mrcLugares.ResumeLayout(false);
+            this.mrcLugares.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLugares)).EndInit();
+            this.mrcTareas.ResumeLayout(false);
+            this.mrcTareas.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTareas)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtTareas;
-        private System.Windows.Forms.TextBox txtLugares;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnAgregrar;
-        private System.Windows.Forms.DataGridView dgvTareas;
+        private System.Windows.Forms.GroupBox mrcLugares;
+        private System.Windows.Forms.Button btnEliminarLugar;
         private System.Windows.Forms.DataGridView dgvLugares;
+        private System.Windows.Forms.Button btnAgregarLugar;
+        private System.Windows.Forms.TextBox txtLugares;
+        private System.Windows.Forms.GroupBox mrcTareas;
+        private System.Windows.Forms.Button btnEliminarTarea;
+        private System.Windows.Forms.DataGridView dgvTareas;
+        private System.Windows.Forms.TextBox txtTareas;
+        private System.Windows.Forms.Button btnAgregarTarea;
     }
 }

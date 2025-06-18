@@ -16,7 +16,7 @@ namespace prySalvarezza_IEFI
         private int idUltimoRegistro = -1;
         public clsConexión()
         {
-            string ruta = Application.StartupPath + @"\ControlDeUsuarios.accdb"; // Dentro de bin\Debug
+            string ruta = Application.StartupPath + @"\ControlDeUsuarios.accdb"; 
             string cadenaConexion = $@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source={ruta};";
 
             conexión = new OleDbConnection(cadenaConexion);
@@ -25,7 +25,7 @@ namespace prySalvarezza_IEFI
         {
             try
             {
-                Cmb.Items.Clear(); // Limpiar antes de cargar
+                Cmb.Items.Clear(); 
 
                 string consulta = "SELECT DISTINCT Cargo FROM Usuarios";
                 OleDbCommand comando = new OleDbCommand(consulta, conexión);
